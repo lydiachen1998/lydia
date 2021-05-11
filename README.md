@@ -1,24 +1,20 @@
 ---
-title: 目錄Leetcode
+title: 2.Add Two Numbers
 tags: Leetcode,2021
 ---
-## 【LeetCode】目錄
-1. [Two Sum](https://hackmd.io/s3A4a2JgSiSc_BG4om_7cw)
-2. [Add Two Numbers](https://hackmd.io/GphB5JJXT1qGq2BzwkvDaQ)
-7. [Reverse Integer](https://hackmd.io/phEYJfNiRKG-84yrajI0xQ)
-9. [Palindrome Number](https://hackmd.io/hmadW1CuSy6ExE5cqV9VvA)
-13. [Roman to Integer](https://hackmd.io/Ic5IPtkmSD-wjIMs-ZQw3w)
-20. [Valid Parentheses](https://hackmd.io/7sFpYPltRcuGWKg8wAZ37w)
-21. [Merge Two Sorted Lists](https://hackmd.io/_GnRtea-S-2nf4ReoFDZyw)
-26. [Remove Duplicates from Sorted Array](https://hackmd.io/2qFJtjxMQcODOcV_cZo0Jg)
-29. [Divide Two Integers](https://hackmd.io/ZHN6Qwy4TFKOQSetTkO7Cg)
-35. [Search Insert Position](https://hackmd.io/lponYW_oSLKwbhiRFVOCug)
-45. [Jump Game II](https://hackmd.io/WGruxTDeTV6UmxhBw0QLqg)
-109. [Convert Sorted List to Binary Search Tree](https://hackmd.io/9XlzU2bbSzy7I4_eSkkhPg)
-1306. [Jump Game III](https://hackmd.io/9XlzU2bbSzy7I4_eSkkhPg)
-___
-程式使用C#
+# 【LeetCode】 2. Add Two Numbers
+## Description
+>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-Day: 2021/05/11
-Last Update: 2021/05/11
-Contact: lydiachen1998@gmail.com
+>給你兩個非空的linked list 代表兩個非負整數。每個位數用相反的順序存在節點裡面。
+請將兩數相加後，一樣回傳一個linked list。
+你可以假設裡面不會有任何多餘的零。
+
+
+## Example:
+
+>Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+## Solution
