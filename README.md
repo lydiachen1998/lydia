@@ -1,20 +1,43 @@
 ---
-title: 2.Add Two Numbers
+title: 7.Reverse Integer
 tags: Leetcode,2021
 ---
-# 【LeetCode】 2. Add Two Numbers
+# 【LeetCode】 7. Reverse Integer
 ## Description
->You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+>Given a 32-bit signed integer, reverse digits of an integer.
 
->給你兩個非空的linked list 代表兩個非負整數。每個位數用相反的順序存在節點裡面。
-請將兩數相加後，一樣回傳一個linked list。
-你可以假設裡面不會有任何多餘的零。
+>給一個32位元的有號數，請反轉該數字的每個位數。
 
+```
+Example:
+Example 1:
+Input: 123
+Output: 321
 
-## Example:
+Example 2:
+Input: -123
+Output: -321
 
->Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-Output: 7 -> 0 -> 8
-Explanation: 342 + 465 = 807.
+Example 3:
+Input: 120
+Output: 21
+```
 ## Solution
+>用%10把最低位元拿出來，用*10將每一位元推到下一位。
+如果反轉後有溢位發生，直接輸出零。
+## Code
+```
+public class Solution {
+    public int Reverse(int x) {
+        bool pos = x >= 0;
+        long res = 0;
+        x = pos ? x : -x;
+        while (x != 0) {
+            res = res * 10 + (x % 10);
+            x /= 10;
+        }
+        return (res <= Math.Pow(-2, 31) || res >= Math.Pow(2, 31) - 1) ? 0: pos ? (int) res: (int) -res;
+    }
+}
+```
+tags: LeetCode C#
