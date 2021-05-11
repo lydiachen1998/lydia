@@ -1,43 +1,62 @@
 ---
-title: 7.Reverse Integer
+title: 9.Palindrome Number
 tags: Leetcode,2021
 ---
-# 【LeetCode】 7. Reverse Integer
+# 【LeetCode】 9. Palindrome Number
 ## Description
->Given a 32-bit signed integer, reverse digits of an integer.
 
->給一個32位元的有號數，請反轉該數字的每個位數。
+>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
-```
+>判斷一個數字是不是回文。回文指前唸到後和後唸到前一樣。
+
 Example:
 Example 1:
-Input: 123
-Output: 321
+Input: 121
+Output: true
 
+```
 Example 2:
-Input: -123
-Output: -321
+Input: -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
 Example 3:
-Input: 120
-Output: 21
+Input: 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 ```
 ## Solution
->用%10把最低位元拿出來，用*10將每一位元推到下一位。
-如果反轉後有溢位發生，直接輸出零。
+
 ## Code
 ```
 public class Solution {
-    public int Reverse(int x) {
-        bool pos = x >= 0;
-        long res = 0;
-        x = pos ? x : -x;
-        while (x != 0) {
-            res = res * 10 + (x % 10);
-            x /= 10;
-        }
-        return (res <= Math.Pow(-2, 31) || res >= Math.Pow(2, 31) - 1) ? 0: pos ? (int) res: (int) -res;
+    public bool IsPalindrome(int x) {
+         if(x < 0)
+            {
+                return false;
+            }
+
+            if(x == 0)
+            {
+                return true;
+            }
+
+            int left = (int) Math.Floor(Math.Log10(x));
+            int right = 0;
+
+            while (left >= right)
+            {
+                int leftDigit = (x / ((int) Math.Pow(10, left--))) % 10;
+                int rightDigit = (x / ((int)Math.Pow(10, right++))) % 10;
+
+                if (leftDigit != rightDigit)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        
     }
 }
 ```
-tags: LeetCode C#
